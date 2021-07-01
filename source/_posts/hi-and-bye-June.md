@@ -1,6 +1,5 @@
 ---
 title: hi and bye June
-date: 2021-06-29 14:13:34
 ---
 <BR>
 
