@@ -104,6 +104,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git 
-  repository: https://github.com/Gininin/testing.github.io
+  repository: git@github.com:Gininin/testing.github.io.git
   branch: gh-pages
   
