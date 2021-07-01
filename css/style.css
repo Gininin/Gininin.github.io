@@ -1829,7 +1829,7 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  background: url("/images/bg.svg") center center/cover no-repeat;
+  background: url("https://raw.githubusercontent.com/Gininin/Gininin.github.io/gh-pages/source/_posts/pictures/pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-19670.jpg") center center/cover no-repeat;
   background-position-y: 70px;
 }
 @media (max-width: 780px) {
