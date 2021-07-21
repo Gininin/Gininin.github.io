@@ -145,7 +145,7 @@
     <div class="fade-in-down-animation">
         <div class="tagcloud-container">
             <div class="tagcloud-content">
-                <a href="/tags/Mood/" style="font-size: 1rem;">-Mood</a> <a href="/tags/achievement/" style="font-size: 1rem;">-achievement</a> <a href="/tags/monthly/" style="font-size: 1rem;">-monthly</a> <a href="/tags/mood/" style="font-size: 1.6rem;">-mood</a> <a href="/tags/schedule/" style="font-size: 1rem;">-schedule</a> <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 1.6rem;">-碎碎念</a> <a href="/tags/%E7%AA%81%E5%A6%82%E5%85%B6%E6%9D%A5/" style="font-size: 1rem;">-突如其来</a> <a href="/tags/%E7%AA%81%E7%84%B6%E8%AF%97%E4%BA%BA/" style="font-size: 1.6rem;">-突然诗人</a> <a href="/tags/%E8%B0%88%E5%90%8E%E6%84%9F/" style="font-size: 1rem;">-谈后感</a>
+                <a href="/tags/Mood/" style="font-size: 1rem;">-Mood</a> <a href="/tags/achievement/" style="font-size: 1rem;">-achievement</a> <a href="/tags/age/" style="font-size: 1rem;">-age</a> <a href="/tags/monthly/" style="font-size: 1rem;">-monthly</a> <a href="/tags/mood/" style="font-size: 1.6rem;">-mood</a> <a href="/tags/schedule/" style="font-size: 1rem;">-schedule</a> <a href="/tags/%E7%94%9F%E6%97%A5%E8%AE%B0/" style="font-size: 1rem;">-生日记</a> <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 1.6rem;">-碎碎念</a> <a href="/tags/%E7%AA%81%E5%A6%82%E5%85%B6%E6%9D%A5/" style="font-size: 1rem;">-突如其来</a> <a href="/tags/%E7%AA%81%E7%84%B6%E8%AF%97%E4%BA%BA/" style="font-size: 1.6rem;">-突然诗人</a> <a href="/tags/%E8%B0%88%E5%90%8E%E6%84%9F/" style="font-size: 1rem;">-谈后感</a>
             </div>
         </div>
     </div>
@@ -187,46 +187,119 @@
     
 
     <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-    <ul class="side-tools-list">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
+        $tools-item-width = 32px;
+$tools-item-font-size = 1.1rem;
+$tools-item-border-radius = 1px;
 
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
 
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
+.side-tools-container {
+  position: relative;
 
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
+  .tools-item {
+    width: $tools-item-width;
+    height: $tools-item-width;
+    font-size: $tools-item-font-size;
+    margin-bottom: 3px;
+    cursor: pointer;
+    border-right: none;
+    border-radius: $tools-item-border-radius;
+    box-shadow: 1px 1px 3px var(--shadow-color);
+    color: var(--default-text-color);
+    background: var(--background-color);
 
-        <!-- rss -->
-        
+    i {
+      color: var(--default-text-color);
+    }
 
-        
+    &:hover {
+      color: var(--background-color);
+      background: var(--primary-color);
+      box-shadow: 2px 2px 6px var(--shadow-color);
 
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
+      i {
+        color: var(--background-color);
+      }
+    }
 
-    <ul class="exposed-tools-list">
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-    </ul>
-</div>
+    +keep-tablet() {
+      width: $tools-item-width * 0.9;
+      height: $tools-item-width * 0.9;
+      font-size: $tools-item-font-size * 0.9;
+      margin-bottom: 2px;
+    }
+
+    &.rss {
+
+      a {
+        border-radius: $tools-item-border-radius;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          color: var(--background-color);
+          background: var(--primary-color);
+          box-shadow: 2px 2px 6px var(--shadow-color);
+        }
+      }
+    }
+  }
+
+
+  .side-tools-list {
+    opacity: 0;
+    transform: translateX(100%);
+    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "linear, linear");
+
+    .tool-expand-width {
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  .exposed-tools-list {
+
+    if (hexo-config('style.scroll.percent.enable') == true) {
+      .tool-scroll-to-top {
+        display: none;
+
+        &.show {
+          display: flex;
+        }
+
+        &:hover {
+
+          .percent {
+            display: none;
+          }
+
+          .arrow-up {
+            display: flex;
+          }
+
+        }
+
+        .arrow-up {
+          display: none;
+        }
+
+        .percent {
+          display: flex;
+          font-size: 1rem;
+        }
+
+      }
+
+    }
+  }
+}
 
     </div>
 

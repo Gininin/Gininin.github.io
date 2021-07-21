@@ -212,7 +212,8 @@
         <div class="article-content markdown-body">
             <h5 id="713"><a href="#713" class="headerlink" title="713"></a>713</h5><p>没关系的，沉下心来。<br><br>剩下的交给时间。<br></p>
 <h5 id="715"><a href="#715" class="headerlink" title="715"></a>715</h5><p>神奇，当想要努力想起一些人和事时，发现记不清了。<br><br>可能本来就是我该忘记的。<br><br>心理学上有一个：粉色大象效应/郑融也有一首歌《房间里的大象》：<br><br>意思是越提醒自己忽略，放下，无视，潜意识越强化该事物的重要性。<br><br><strong>背道而驰。</strong><br></p>
-<h5 id="717"><a href="#717" class="headerlink" title="717"></a>717</h5><p>在看文章的时候:<br><br>“Privacy may be dead, but data protection is alive and kicking. “–Rocco, B<br><br>的确，privacy是早就dead了的哈哈，但是他说的好直白噢。<br><br>#####718<br>时常有种感觉，我好像离过去越来越远了。人，心态，环境。<br><br>我不知道这是不是好事，也时常感到有些迷茫。虽然我知道迷茫是正常的，因为人生还在探索阶段。<br><br>到底要怎么走啊，也是我自己才知道了。<br><br>喜欢之前professor在讲债券的时候说的一句话:<br><br><em>“Sometimes you know, promises are just promises.”</em><br><br>没什么的，接受“万物都是流动的”这一概念就好。<br></p>
+<h5 id="717"><a href="#717" class="headerlink" title="717"></a>717</h5><p>在看文章的时候:<br><br>“Privacy may be dead, but data protection is alive and kicking. “–Rocco, B<br><br>的确，privacy是早就dead了的哈哈，但是他说的好直白噢。<br></p>
+<h5 id="718"><a href="#718" class="headerlink" title="718"></a>718</h5><p>时常有种感觉，我好像离过去越来越远了。人，心态，环境。<br><br>我不知道这是不是好事，也时常感到有些迷茫。虽然我知道迷茫是正常的，因为人生还在探索阶段。<br><br>到底要怎么走啊，也是我自己才知道了。<br><br>喜欢之前professor在讲债券的时候说的一句话:<br><br><em>“Sometimes you know, promises are just promises.”</em><br><br>没什么的，接受“万物都是流动的”这一概念就好。<br></p>
 
         </div>
 
@@ -220,6 +221,21 @@
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/07/20/%E5%B9%B4%E9%BE%84%E5%90%97/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">24+1</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -358,46 +374,119 @@
     
 
     <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-    <ul class="side-tools-list">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
+        $tools-item-width = 32px;
+$tools-item-font-size = 1.1rem;
+$tools-item-border-radius = 1px;
 
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
 
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
+.side-tools-container {
+  position: relative;
 
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
+  .tools-item {
+    width: $tools-item-width;
+    height: $tools-item-width;
+    font-size: $tools-item-font-size;
+    margin-bottom: 3px;
+    cursor: pointer;
+    border-right: none;
+    border-radius: $tools-item-border-radius;
+    box-shadow: 1px 1px 3px var(--shadow-color);
+    color: var(--default-text-color);
+    background: var(--background-color);
 
-        <!-- rss -->
-        
+    i {
+      color: var(--default-text-color);
+    }
 
-        
+    &:hover {
+      color: var(--background-color);
+      background: var(--primary-color);
+      box-shadow: 2px 2px 6px var(--shadow-color);
 
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
+      i {
+        color: var(--background-color);
+      }
+    }
 
-    <ul class="exposed-tools-list">
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-    </ul>
-</div>
+    +keep-tablet() {
+      width: $tools-item-width * 0.9;
+      height: $tools-item-width * 0.9;
+      font-size: $tools-item-font-size * 0.9;
+      margin-bottom: 2px;
+    }
+
+    &.rss {
+
+      a {
+        border-radius: $tools-item-border-radius;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          color: var(--background-color);
+          background: var(--primary-color);
+          box-shadow: 2px 2px 6px var(--shadow-color);
+        }
+      }
+    }
+  }
+
+
+  .side-tools-list {
+    opacity: 0;
+    transform: translateX(100%);
+    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "linear, linear");
+
+    .tool-expand-width {
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  .exposed-tools-list {
+
+    if (hexo-config('style.scroll.percent.enable') == true) {
+      .tool-scroll-to-top {
+        display: none;
+
+        &.show {
+          display: flex;
+        }
+
+        &:hover {
+
+          .percent {
+            display: none;
+          }
+
+          .arrow-up {
+            display: flex;
+          }
+
+        }
+
+        .arrow-up {
+          display: none;
+        }
+
+        .percent {
+          display: flex;
+          font-size: 1rem;
+        }
+
+      }
+
+    }
+  }
+}
 
     </div>
 
@@ -405,7 +494,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#713"><span class="nav-text">713</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#715"><span class="nav-text">715</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#717"><span class="nav-text">717</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#713"><span class="nav-text">713</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#715"><span class="nav-text">715</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#717"><span class="nav-text">717</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#718"><span class="nav-text">718</span></a></li></ol>
     </div>
 </div>
         </aside>
